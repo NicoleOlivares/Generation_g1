@@ -1,0 +1,60 @@
+#creación de base de datos
+create database "nombre_baseDatos";
+
+Usuario para trabajar localmente
+CREATE USER 'nicole'@'localhost' IDENTIFIED BY 'Admin1234';
+GRANT ALL PRIVILEGES ON *.* TO 'nicole'@'localhost' WITH GRANT OPTION;
+
+Usuario para trabajar remoto
+CREATE USER 'nicole'@'%' IDENTIFIED BY 'Admin1234';
+GRANT ALL PRIVILEGES ON *.* TO 'nicole'@'%' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+exit -> salir de mysql
+
+********
+
+-- ingresar a mysql con el nuevo usuario
+mysql -u nicole -p
+
+--ver desde la terminal las bases de datos creadas
+show databases;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| ejemplo            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
+--creando base de datos
+create database (nombre);
+
+--usar base de datos
+use ejemplo;
+
+--viendo si hay tablas creadas
+show tables;
+
+-- CREAR nuestra tabla
+
+CREATE TABLE nombre_tabla(
+    nombre_columna1 tipo_dato,
+    nombre_columna2 tipo_dato,
+    ...
+    PRIMARY KEY (nombre_columna1)
+
+)
+
+
+
+CREATE table clientes(
+    id int,
+    nombre varchar2(30),
+    correo varchar2(50),
+    PRIMARY KEY (id)
+);
