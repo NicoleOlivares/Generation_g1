@@ -1,0 +1,6 @@
+package com.generation.api;
+
+@RestController
+public class PathVariableRestController {
+
+}

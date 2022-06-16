@@ -1,0 +1,17 @@
+package com.generation.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class IndexController {
+	// http://localhost:8080/
+	@RequestMapping("/") // anotacion para capturar las rutas
+	public String index(Model model) {
+		model.addAttribute("apellidos", " Olivares Vidal");
+		model.addAtribute("nombres", " Nicole Almendra")
+		return "index.jsp";
+	}
+
+}
