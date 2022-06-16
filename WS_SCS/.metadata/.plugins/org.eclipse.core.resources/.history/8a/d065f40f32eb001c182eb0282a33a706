@@ -1,9 +1,0 @@
-package com.generation.api;
-
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-@ResquestMapping("/var") //localhost:8080/var -> path por default
-public class PathVariableRestController {
-	/** capturar variables desde la ruta o path */
-}
