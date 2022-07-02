@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin-Padding</title>
+    <style>
+        #padre {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+
+        #hijo {
+            width: 40px;
+            height: 40px;
+            background-color: violet;
+            display: inline-block;
+        }
+
+        #hijo2 {
+            width: 40px;
+            height: 40px;
+            background-color: salmon;
+            display: inline-block;
+        }
+
+        /*El margin como efecto optico produce desplazamiento*/
+        /*padding: desplaza internamente el elemento
+        por todo lo que aumente el padding se le resta al ancho y alto*/
+
+        /*elementos inline <a> -> se llama ancor <img><input><label><select><textarea>
+            Elementos block: body, div, form, <h1><h6> <p> <table> <ol> <ul> <li>*/
+        
+        /*NUNCA PONER ELEMENTOS DE BLOCK DENTRO DE UN ELEMENTO INLINE*/
+        /*un error tipico <a href="index.php"><h1></h1></a>*/
+
+        a {
+            display: block;
+            background-color: silver;
+        }
+
+        p {
+            display: inline-block;
+            /*la diferencia entre inline-block e inline es que inline-block tiene margen*/
+        }
+    </style>
+</head>
+<body>
+    <div id="padre">
+        <div id="hijo"></div>
+        <div id="hijo2"></div>
+    </div>
+    
+    <!--block-->
+    <a href="grupo1">grupo 1</a>
+    <a href="grupo2">grupo 2</a>
+    <a href="grupo3">grupo 3</a>
+    <a href="grupo4">grupo 4</a>
+    <a href="grupo5">grupo 5</a>
+    <a href="grupo6">grupo 6</a>
+
+    <p>Esto es un parrafo para ver display</p>
+    <p>esto es para ver el inline-block</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2</title>
+</head>
+<body>
+    <h1>Estoy en la página 2</h1>
+    <a href="index.html">Ir al inicio</a>
+    <br><br><hr>
+    <!--Radio button-->
+    <!--name agrupa las posibles respuestas, si les tengo el mismo nombre puedo 
+    elegir una de ellas. Si le pongo diferente nombre puedo seleccionarlo todos-->
+    <input type="radio" name="opcion" id="html" value="html">HTML<br>
+    <input type="radio" name="opcion" id="css" value="css">CSS<br>
+    <input type="radio" name="opcion" id="js" value="js">JavaScript<br>
+    <hr>
+
+    <!--checkbox-->
+    <!--el usuario puede seleccionar todas las opciones que quiera-->
+    <!--url?opciones1=html&opciones2=css-->
+    HTML<input type="checkbox" name="opciones1" id="opciones1" value="html"><br>
+    <!--cuando se trabaja con label el for y el id deben ser iguales-->
+    <label for="opciones">HTML</label><input type="checkbox" name="opciones1" id="opciones" value="html"><br>
+    <input type="checkbox" name="opciones1" id="opciones1" value="html">HTML<br>
+    <input type="checkbox" name="opciones2" id="opciones2" value="css">CSS<br>
+    <input type="checkbox" name="opciones3" id="opciones3" value="js">JavaScript<br>
+    <br><hr>
+
+    <!--Select-->
+    <label for="lenguajes">Seleccione una opción</label>
+    <!--lenguajes=1 esa informacion se vería al guardar la opcion elegida-->
+    <select id="lenguajes" name="lenguajes">
+        <option value="0" selected>Seleccione un lenguaje</option>
+        <option value="1">Java</option>
+        <option value="2">Python</option>
+        <option value="3">Javascript</option>
+        <option value="4">C#</option>
+        <option value="5">Ruby</option>
+    </select>
+
+
+
+    
+</body>
+</html>

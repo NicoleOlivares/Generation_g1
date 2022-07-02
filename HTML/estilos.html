@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!--etiqueta css-->
+    <style>
+        /*3 formas basicas de asignar un estilo*/
+        /*por Elemento*/
+        div {
+            background-color: violet;
+        }
+
+        p {
+            background-color: salmon;
+            color:aquamarine;
+        }
+
+        img {
+            /*cuando se utiliza % se ajusta a la pagina*/
+            width: 50%;
+        }
+
+        /*EM=16px y REM unidades de medida*/
+        /*otra manera de hacerlo es por clases, se ven afectadas,
+        solo aquellas etiquetas que tengan la clase*/
+        .parrafos {
+            color: whitesmoke;
+        }
+        /*etiqueta solo para id*/
+        #importante {
+            color: greenyellow;
+            background-color: blueviolet;
+        }
+
+        /*orden de jerarquía: id, */
+        .generation1 {
+            color:blueviolet;
+    
+        }
+
+        /*Por etiqueta -> Muy genérico
+        Por clase -> Genérico reducido
+        Por id -> Específico
+        !important -> Prioritario
+        */
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p class="parrafos">parrafo 1</p>
+        <p class="parrafos">parrafo 2</p>
+        <p id="importante">parrafo 3</p>
+        <p>parrafo 4</p>
+    </div>
+    <div class="parrafos">
+        <p>parrafo 5</p>
+    </div>
+    <img src="assets/img/Shera2.jfif" alt="front">
+    
+    <p id="pg1" class="generation1">parrafo 6</p>
+</body>
+</html>
