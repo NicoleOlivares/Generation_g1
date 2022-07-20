@@ -1,0 +1,25 @@
+node -v
+npm -v
+git --version
+pwd me muestra donde estoy
+
+npm install -g npm@latest
+npm i -g npm@latest
+
+
+npm init
+package name: prueba
+description: esto es una prueba
+keywords: prueba
+autor: nicoleolivares
+
+npm notice run 
+
+<comandos para crear proyecto>
+npx create-react-app aplicacion1
+
+aparecerá Happy hacking!
+luego cd aplicacion1 para entrar a la carpeta
+y code . para abrir el proyecto en visual studio code
+
+npm start --> para iniciar 

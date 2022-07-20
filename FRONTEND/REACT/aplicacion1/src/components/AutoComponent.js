@@ -45,7 +45,7 @@ const AutoComponent = () => {
     }
 
     return (
-        <div className="container mt-4">
+        <div className="container mt-8">
             <div className='row'>
                 <div className='col-8'>
                     <h1>Lista</h1>
