@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {FormularioAuto} from './FormularioComponent';
 import {TarjetaAuto} from './TarjetaComponent';
+import { getAll, eliminarAuto, saveAuto } from "../services/AutoServices"; 
 
 const initialAuto = [
     {
@@ -14,34 +15,32 @@ const initialAuto = [
 ]
 
 const AutoComponent = () => {
-    /*Los hooks permiten cambios en los estados de nuestros componentes o elementos
-    Para  que exporte, nos entrega un arreglo con dos respuesta
-    1- componente en si 
-    2- funcion 
-    Necesita que le entreguemos un estado inicial (initialautos)
-    Parte con esta informacion de base
-    */
 
     const [autos, setAutos] = useState(initialAuto);
     /*const [state, setState] = useState();*/
 
     const [autoEditado, setAutoEditado] = useState(null);
 
-    const tarjetaDelete = (autoId) => {
-        const changeAutos = autos.filter(u => u.key != autoId)
-        setAutos(changeAutos)
+    const obtenerAutos = async()=>{
+        setAutos(await getAll())
     }
 
-    const autoAdd = (auto) => {
-        const addAuto = [
-            ...autos,
-            auto
-        ]
-        setAutos(addAuto)
+    useEffect(
+        ()=>{obtenerAutos()}
+        ,[])
+
+    const tarjetaDelete =async(autoId)=>{
+        await eliminarAuto(autoId)
+        setAutos(await getAll())
+    }
+
+    const autoAdd =async(auto)=>{
+        await saveAuto(auto)
+        setAutos(await getAll())
     }
 
     const autoEdit = (autoEditado) => {
-        const changeAutos = autos.map(auto => (auto.key === autoEditado.key ? autoEditado : auto))
+        const changeAutos = autos.map(auto => (auto.id === autoEditado.id ? autoEditado : auto))
         setAutos(changeAutos)
     }
 
@@ -53,7 +52,7 @@ const AutoComponent = () => {
                     {
                         autos.map(u =>
                             <TarjetaAuto
-                                key={u.key}
+                                id={u.id}
                                 auto={u}
                                 tarjetaDelete={tarjetaDelete}
                                 setAutoEditado={setAutoEditado} />)
@@ -63,7 +62,7 @@ const AutoComponent = () => {
                     {/*Final tarjeta*/}
                 </div>
                 <div className='col-4'>
-                    <h1>Formularios</h1>
+                    <h1>Formulario</h1>
                     {/*FormularioComponent*/}
                     <FormularioAuto
                         autoAdd={autoAdd}

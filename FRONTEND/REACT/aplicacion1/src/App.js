@@ -1,10 +1,17 @@
 import React from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import UsuarioComponent from './components/UsuarioComponent';
+import AutoComponent from './components/AutoComponent';
 
 //para que se muestren ambas etiquetas agregamos un div
 const App = () => {
     return (
-        <UsuarioComponent/>
+        <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<UsuarioComponent/>}></Route>
+            <Route path='/autos' element={<AutoComponent/>}></Route>
+        </Routes>
+        </BrowserRouter>
     );
 
 };

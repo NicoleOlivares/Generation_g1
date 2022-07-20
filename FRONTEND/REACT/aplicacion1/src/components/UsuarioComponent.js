@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import {FormularioComponent} from './FormularioComponent';
-import {TarjetaComponent} from './TarjetaComponent';
-import {useNavigate} from 'react-router-dom'
+import React, { useState, useCallback } from "react";
+import { FormularioComponent } from './FormularioComponent';
+import { TarjetaComponent } from './TarjetaComponent';
+import { useNavigate } from 'react-router-dom'
 
 /*
 const usuario1 = {
@@ -68,6 +68,11 @@ const UsuarioComponent = () => {
 
     const [usuarioEditado, setUsuarioEditado] = useState(null);
 
+    const navigate = useNavigate();
+
+    const handleOnClick = useCallback(() => navigate('/autos', { replace: true }, [navigate]));
+
+
     const tarjetaDelete = (usuarioKey) => {
         const changeUsuarios = usuarios.filter(u => u.key != usuarioKey)
         setUsuarios(changeUsuarios)
@@ -112,6 +117,10 @@ const UsuarioComponent = () => {
                         usuarioEdit={usuarioEdit}
                         setUsuarioEditado={setUsuarioEditado} />
 
+                </div>
+                <br/>
+                <div>
+                    <button type="buttom" className="btn btn-outline-primary my-2" onClick={handleOnClick}>Ir a Autos</button>
                 </div>
             </div>
         </div>);
